@@ -64,11 +64,6 @@ export const validateSigninForm = (data: SigninFormData): ValidationErrors => {
     errors.password = ["Password must be 8 character long!"];
   }
 
-  // Role validation
-  if (!data.role) {
-    errors.role = ["Please select a role"];
-  }
-
   return errors;
 };
 

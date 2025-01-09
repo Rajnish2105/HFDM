@@ -21,13 +21,11 @@ import Link from "next/link";
 import { SignupAction } from "@/actions/authActions";
 import SubmittingButton from "./SubmittingButton";
 import { useFormState } from "react-dom";
-import { ValidationErrors, FormState } from "@/types/auth";
+import { FormState } from "@/types/auth";
 import { useEffect } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 export function Signup() {
-  const router = useRouter();
   const initialState: FormState = {
     errors: undefined,
     success: false,
@@ -42,10 +40,10 @@ export function Signup() {
         email: state.credentials.email,
         password: state.credentials.password,
         redirect: true,
-        callbackUrl: "/"
+        callbackUrl: "/",
       });
     }
-  }, [state?.success]);
+  }, [state?.success, state.credentials]);
 
   return (
     <Card className="w-[350px]">

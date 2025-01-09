@@ -5,18 +5,19 @@ export async function GET() {
   try {
     const patients = await db.patient.findMany({
       where: {
-        status: "ACTIVE"
+        status: "ACTIVE",
       },
       select: {
         id: true,
         name: true,
         roomnumber: true,
-        floornumber: true
-      }
+        floornumber: true,
+      },
     });
 
     return NextResponse.json(patients);
   } catch (error) {
+    console.log("error", error);
     return new NextResponse("Internal error", { status: 500 });
   }
 }

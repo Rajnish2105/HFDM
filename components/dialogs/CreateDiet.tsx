@@ -17,7 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect } from "react";
@@ -87,6 +86,7 @@ export function CreateDiet() {
         instructions: "",
       });
     } catch (error) {
+      console.log("error", error);
       toast.error("Failed to create diet");
     } finally {
       setLoading(false);

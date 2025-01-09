@@ -85,7 +85,7 @@ export function Signin() {
       </CardContent>
       <CardFooter className="flex flex-col">
         <p>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/signup" className="text-blue-700 underline">
             Sign up
           </Link>
